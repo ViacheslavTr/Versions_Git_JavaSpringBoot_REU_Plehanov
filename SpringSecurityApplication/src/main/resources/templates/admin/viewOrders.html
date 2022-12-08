@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Заказы</title>
+</head>
+<body>
+
+<!--//////////////////////////////////////-->
+<form th:method="POST" th:action="@{/admin/search}">
+    <fieldset>
+        <label for="search">Поиск по наименованию</label>
+        <input type="search" name="search" id="search">
+        <input type="submit" value="Найти">
+    </fieldset>
+</form>
+<!--////////////////////////////////////////-->
+<h3>Заказы</h3>
+<div th:each="order: ${orders}">
+    <h3 th:text="'Заказ № ' + ${order.getNumber()}"></h3>
+    <h3 th:text="'Пользователь ' + ${order.getPerson().getLogin()}"></h3>
+    <br>
+    <br>
+    <img th:src="'/img/' + ${order.getProduct().imageList[0].getFileName()}" with="300px">
+    <br>
+    <br>
+    <p th:text="'Наименование: ' + ${order.getProduct().getTitle()}"></p>
+    <p th:text="'Количество: ' +${order.getCount()}"></p>
+    <p th:text="'Цена: ' + ${order.getProduct().getPrice()}"></p>
+    <p th:text="'Дата заказа: ' + ${#temporals.format(order.getDateTime(), 'dd-MMM-yyyy')}"></p>
+    <p th:text="'Статус заказа: ' + ${order.getStatus()}"></p>
+<!--    <button type="submit" th:disabled="${order.getStatus() eq T(com.example.springsecurityapplication.enumm.Status).values()[4]? true:false}">Отменить заказ</button>-->
+    <a th:href="@{/admin/status/{id}(id=${order.getId()})}">Внести изменения в заказ</a>
+<!--    <button type="submit" th:disabled="${order.getStatus() eq T(com.example.springsecurityapplication.enumm.Status).values()[4]? true:false}">Отменить</button>-->
+    <hr>
+    <hr>
+</div>
+</body>
+</html>
