@@ -1,13 +1,13 @@
 body{
     margin: 0;
-    padding: 40px;
+    padding: 30px;
     background-color: #292e44;
 }
 h3 {
     font-family: 'Roboto bold', sans-serif;
-    color: white;
-    display: block;
-    text-align: right;
+    color: #292e44;
+    display: inline;
+    text-align: center;
 }
 #content {
     background-color: white;
@@ -16,33 +16,57 @@ h3 {
     margin: 0 auto;
     padding: 20px;
     text-align: center;
-    height: 420px;
+    height: 800px;
 }
-#content form input[type="text"], input[type="number"]{
+.content-container-lr{
+    display: flex;
+}
+.content-left{
+    display: block;
+    padding: 10px;
+}
+.content-right{
+    display: block;
+    padding: 10px;
+}
+.content-bottom{
+    display: block;
+    padding: 10px;
+}
+#content form input[type="text"], [type="number"]{
     border: 1px solid grey;
     color: grey;
-    font:  14px Arial;
-    margin: 0 0 10px;
+    font:  14px "Roboto Light", sans-serif;
     padding: 12px 10px 12px 40px;
     width: 400px;
 }
-label{
-    color: grey;
-    font: 14px Arial;
+.content-left-item{
+    clear:both;
+    text-align:right;
+    padding: 10px;
 }
-#content form input[type="username"], input[type="password"]:focus {
-    border: 2px solid #292e44;
-    outline: none;
+select, textarea{
+    border: 1px solid grey;
+    color: grey;
+    font:  14px "Roboto Light", sans-serif;
+    padding: 12px 10px 12px 40px;
+}
+label{
+    float:left;
+    font: 14px "Roboto Light", sans-serif;
 }
 #content form input[type="submit"] {
     background: #168fff;
     border: 1px solid #03073f;
     font: bold 16px Arial;
-    width: 450px;
+    width: 300px;
     height: 40px;
     margin-top: 10px;
 }
-#content form input[type=submit]:hover {
+#content form input[type="file"]{
+    padding: 10px;
+}
+#content form input[type="submit"]:hover {
     background: #14205d;
     border: 2px solid #03073f;
     color: white;
@@ -50,4 +74,14 @@ label{
 }
 #content a{
     text-underline-offset: 0.5em;
+}
+#description{
+    margin: 0 auto;
+    width: 720px;
+    height: 250px;
+    resize: none;
+}
+#seller{
+    width: 400px;
+    resize: none;
 }

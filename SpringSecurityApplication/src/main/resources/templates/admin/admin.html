@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Админ панель</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,300&display=swap" rel="stylesheet">
     <link th:href="@{/css/admin.css}" type="text/css" rel="stylesheet">
 </head>
 <body>
 <div class="navbar">
-    <div class="navbar-lk">
-        <h3>Личный кабинет администратора</h3>
+    <div>
+        <h2>Личный кабинет администратора: </h2>
     </div>
     <div>
         <form th:method="POST" th:action="@{/logout}">
@@ -16,7 +17,9 @@
         </form>
     </div>
     <div>
-        <a href="/admin/product/add">Добавить товар</a>
+        <form method="get" th:action="@{/admin/product/add}">
+            <input type="submit" value="Добавить товар">
+        </form>
     </div>
     <div>
         <form method="get" th:action="@{/admin/viewOrders}">
@@ -24,21 +27,23 @@
         </form>
     </div>
 </div>
-
-
-<h3>Каталог товаров: </h3>
-<hr>
-<div th:each="product: ${products}">
-    <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="300px">
-    <p th:text="'Наименование: ' + ${product.getTitle()}"></p>
-    <p th:text="'Описание: ' + ${product.getDescription()}"></p>
-    <p th:text="'Цена: ' + ${product.getPrice()}"></p>
-    <p th:text="'Склад: ' + ${product.getWarehouse()}"></p>
-    <p th:text="'Продавец: ' + ${product.getSeller()}"></p>
-    <p th:text="'Категория товара: ' + ${product.getCategory().getName()}"></p>
-    <a th:href="@{/admin/product/edit/{id}(id=${product.getId()})}">Редактировать товар</a>
-    <a th:href="@{/admin/product/delete/{id}(id=${product.getId()})}">Удалить товар</a>
-    <hr>
+<h3>Каталог товаров</h3>
+<div class="grid-container">
+    <div class="grid-elem" th:each="product: ${products}">
+        <div class="grid-elem-img">
+            <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="300px">
+        </div>
+        <div class="grid-elem-title">
+            <h4 th:text="${product.getTitle()}"></h4>
+        </div>
+        <!--        <p th:text="'Описание: ' + ${product.getDescription()}"></p>-->
+            <p th:text="'Цена: ' + ${product.getPrice()}"></p>
+            <p th:text="'Склад: ' + ${product.getWarehouse()}"></p>
+            <p class="grid-elem-title" id="customer" th:text="'Продавец: ' + ${product.getSeller()}"></p>
+            <p th:text="'Категория товара: ' + ${product.getCategory().getName()}"></p>
+            <a th:href="@{/admin/product/edit/{id}(id=${product.getId()})}">Редактировать товар | </a>
+            <a th:href="@{/admin/product/delete/{id}(id=${product.getId()})}">Удалить товар</a>
+    </div>
 </div>
 </body>
 </html>

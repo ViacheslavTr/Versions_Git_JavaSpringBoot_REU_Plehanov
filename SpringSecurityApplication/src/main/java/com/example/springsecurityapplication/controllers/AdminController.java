@@ -236,7 +236,7 @@ public class AdminController {
     @PostMapping("/status/{id}")
     public String changeStatus(@ModelAttribute("editOrder") Order order, @PathVariable("id") int id){
         orderService.updateOrder(id, order);
-        return "redirect:/admin";
+        return "redirect:/admin/viewOrders";
     }
     ///////////////////////////////////
     @PostMapping("/search")

@@ -1,0 +1,72 @@
+body{
+    margin: 0;
+    padding: 40px;
+    background-color: #292e44;
+}
+h3 {
+    font-family: 'Roboto bold', sans-serif;
+    color: white;
+    display: block;
+    text-align: right;
+}
+.navbar form input[type=submit]{
+    margin: 10px;
+    background-color: #959AAC;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+.navbar form input[type=submit]:hover{
+    background-color: white;
+    cursor: pointer;
+    box-shadow: #959AAC 5px 5px 5px;
+    border: none;
+}
+.navbar form input[type=search]{
+    width: auto;
+    color: grey;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: "Roboto Light", sans-serif;
+    border: none;
+}
+.navbar form input[type=search]:focus{
+    border: 2px solid #292e44;
+    outline: none;
+}
+
+.grid-container{
+    display: grid;
+    grid-template: repeat(auto-fill, minmax(100px, auto))/ repeat(auto-fill, minmax(600px , auto));
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 15px;
+}
+.grid-elem{
+    display: flex;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+    padding: 15px;
+    font-family: 'Roboto Light', sans-serif;
+}
+.grid-elem img{
+    display: block;
+    border-radius: 10px;
+    width: 130px;
+}
+.grid-elem-details{
+    display: block;
+    padding: 20px;
+}
+a{
+    text-underline-offset: 0.3em;
+
+}
+p{
+    display: inline;
+}
+
+
+

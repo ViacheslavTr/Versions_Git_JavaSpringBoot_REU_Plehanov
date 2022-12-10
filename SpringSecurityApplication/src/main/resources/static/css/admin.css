@@ -1,11 +1,78 @@
+body{
+    margin: 0;
+    padding: 40px;
+    background-color: #292e44;
+}
+h3, h2{
+    font-family: 'Roboto bold', sans-serif;
+    color: white;
+    display: inline;
+}
 h3{
-    text-align: center;
-    font-family: sans-serif;
+    text-align: right;
+    display: block;
 }
 .navbar{
-    background-color: #2d36d4;
     display: flex;
+    grid-template-rows: 4fr;
 }
-.navbar-pk{
+.navbar h2, form{
+    display: block;
+    margin: 0 auto;
+    padding-right: 20px;
+    justify-content: center;
+}
+.navbar form input[type=submit]{
+    background-color: #959AAC;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+.navbar form input[type=submit]:hover{
+    background-color: white;
+    cursor: pointer;
+    box-shadow: #959AAC 5px 5px 5px;
+    border: none;
+}
+.grid-container{
+    display: grid;
+    grid-template: repeat(auto-fit, minmax(400px, auto))/ repeat(auto-fill, minmax(330px , 330px));
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 15px;
+}
+.grid-elem{
+    display: block;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+    padding: 15px;
+    font-family: 'Roboto Light', sans-serif;
+    margin-bottom: 0;
+}
+.grid-elem img{
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+}
+.grid-elem-img{
+    display: block;
+    height: 400px;
+}
+.grid-elem-title{
+    display: block;
+    height: 50px;
+}
+a{
+    text-underline-offset: 0.3em;
+}
+h4, #customer{
+    display: inline;
+}
+p#customer.grid-elem-title{
+    display: block;
+    height: 50px;
+}
 
-}
+
+

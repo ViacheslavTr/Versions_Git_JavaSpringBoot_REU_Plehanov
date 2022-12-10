@@ -33,14 +33,14 @@
     <br>
     <p>Для смены статуса скопируйте и вставьте один из предложенных вариантов в текущий статус: Принят Оформлен Ожидает Получен Отменен</p>
     <br>
-    <br>
-    <label for="person">Id seller: </label>
-    <input type="text" th:field="*{person}" placeholder="Id продавцa" id="person">
+    <input type="submit" value="Нажмите для внесения изменений">
+<!--    <label for="person">Id seller: </label>-->
+    <input hidden type="text" th:field="*{person}" placeholder="Id продавцa" id="person">
     <div style="color: red" th:if="${#fields.hasErrors('person')}" th:errors="*{person}"></div>
     <br>
     <br>
-    <label for="product">Id product: </label>
-    <input type="text" th:field="*{product}" placeholder="Id продукта" id="product">
+<!--    <label for="product">Id product: </label>-->
+    <input hidden type="text" th:field="*{product}" placeholder="Id продукта" id="product">
     <div style="color: red" th:if="${#fields.hasErrors('product')}" th:errors="*{product}"></div>
     <br>
     <br>
@@ -51,7 +51,7 @@
 <!--        </div>-->
 <!--    </select>-->
 <!--    <br>-->
-    <input type="submit" value="Нажмите для внесения изменений">
+
 </form>
 </body>
 </html>
