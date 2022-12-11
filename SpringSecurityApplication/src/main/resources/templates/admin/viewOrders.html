@@ -9,9 +9,12 @@
 
 <!--//////////////////////////////////////-->
 <div class="navbar">
-    <form th:method="POST" th:action="@{/admin/search}">
+    <form class="search" th:method="POST" th:action="@{/admin/search}">
         <input type="search" name="search" id="search" placeholder="4 символа № заказа">
         <input type="submit" value="Найти">
+    </form>
+    <form class="home" th:action="@{/admin}">
+        <input type="submit" value="Домой">
     </form>
 </div>
 

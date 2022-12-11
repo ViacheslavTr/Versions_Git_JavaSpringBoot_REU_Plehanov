@@ -9,6 +9,12 @@ h3 {
     display: block;
     text-align: right;
 }
+.navbar{
+    display: grid;
+    width: 590px;
+    grid-template-columns: 1fr 1fr;
+
+}
 .navbar form input[type=submit]{
     margin: 10px;
     background-color: #959AAC;

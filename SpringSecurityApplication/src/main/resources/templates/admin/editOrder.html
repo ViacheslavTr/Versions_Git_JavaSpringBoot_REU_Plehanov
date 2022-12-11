@@ -3,55 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>Редактирование заказа</title>
+    <link th:href="@{/css/editOrder.css}" type="text/css" rel="stylesheet">
 </head>
 <body>
-<h3>Редактирование заказа</h3>
-<form th:method="POST" th:action="@{/admin/status/{id}(id=${editOrder.getId()})}" th:object="${editOrder}">
-    <label for="count">Количество: </label>
-    <input type="text" th:field="*{count}" placeholder="Количество" id="count">
-    <div style="color: red" th:if="${#fields.hasErrors('count')}" th:errors="*{count}"></div>
-    <br>
-    <br>
-    <label for="dateTime">Дата заказа: </label>
-    <input type="text" th:field="*{dateTime}" placeholder="Время заказа" id="dateTime">
-    <div style="color: red" th:if="${#fields.hasErrors('dateTime')}" th:errors="*{dateTime}"></div>
-    <br>
-    <br>
-    <label for="number">Номер заказа: </label>
-    <input type="text" th:field="*{number}" min="1" step="1" id="number">
-    <div style="color: red" th:if="${#fields.hasErrors('number')}" th:errors="*{number}"></div>
-    <br>
-    <br>
-    <label for="price">Цена: </label>
-    <input type="number" th:field="*{price}" min="1" step="0.00" id="price">
-    <div style="color: red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
-    <br>
-    <br>
-    <label for="status">Текущий статус: </label>
-    <input type="text" th:field="*{status}" placeholder="статус" id="status">
-    <div style="color: red" th:if="${#fields.hasErrors('status')}" th:errors="*{status}"></div>
-    <br>
-    <p>Для смены статуса скопируйте и вставьте один из предложенных вариантов в текущий статус: Принят Оформлен Ожидает Получен Отменен</p>
-    <br>
-    <input type="submit" value="Нажмите для внесения изменений">
-<!--    <label for="person">Id seller: </label>-->
-    <input hidden type="text" th:field="*{person}" placeholder="Id продавцa" id="person">
-    <div style="color: red" th:if="${#fields.hasErrors('person')}" th:errors="*{person}"></div>
-    <br>
-    <br>
-<!--    <label for="product">Id product: </label>-->
-    <input hidden type="text" th:field="*{product}" placeholder="Id продукта" id="product">
-    <div style="color: red" th:if="${#fields.hasErrors('product')}" th:errors="*{product}"></div>
-    <br>
-    <br>
-<!--    <label for="status">Выберите статус</label>-->
-<!--    <select name="status" th:field="*{status}" id="status">-->
-<!--        <div th:each="element : ${status}">-->
-<!--            <option th:text="${element.getStatus()}" th:value="${element.getId()}"></option>-->
-<!--        </div>-->
-<!--    </select>-->
-<!--    <br>-->
+<section id="content">
+    <h3>Редактирование заказа</h3>
+    <div class="content-container">
+        <form th:method="POST" th:action="@{/admin/status/{id}(id=${editOrder.getId()})}" th:object="${editOrder}">
+            <div class="content-item">
+                <label for="count">Количество: </label>
+                <input type="text" th:field="*{count}" placeholder="Количество" id="count">
+                <div style="color: red" th:if="${#fields.hasErrors('count')}" th:errors="*{count}"></div>
+            </div>
+            <div class="content-item">
+                <label for="dateTime">Дата заказа: </label>
+                <input type="text" th:field="*{dateTime}" placeholder="Время заказа" id="dateTime">
+                <div style="color: red" th:if="${#fields.hasErrors('dateTime')}" th:errors="*{dateTime}"></div>
+            </div>
+            <div class="content-item">
+                <label for="number">Номер заказа: </label>
+                <input type="text" th:field="*{number}" min="1" step="1" id="number">
+                <div style="color: red" th:if="${#fields.hasErrors('number')}" th:errors="*{number}"></div>
+            </div>
+            <div class="content-item">
+                <label for="price">Цена: </label>
+                <input type="number" th:field="*{price}" min="1" step="0.00" id="price">
+                <div style="color: red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
+            </div>
+            <div class="content-item">
+                <label for="status">Текущий статус: </label>
+                <input type="text" th:field="*{status}" placeholder="статус" id="status">
+                <div style="color: red" th:if="${#fields.hasErrors('status')}" th:errors="*{status}"></div>
+            </div>
+            <p>Для смены статуса скопируйте и вставьте один из предложенных вариантов в поле текущий статус: Принят Оформлен Ожидает Получен Отменен</p>
+            <input type="submit" value="Внесение изменений">
+            <!--    <label for="person">Id seller: </label>-->
+            <input hidden type="text" th:field="*{person}" placeholder="Id продавцa" id="person">
+            <div style="color: red" th:if="${#fields.hasErrors('person')}" th:errors="*{person}"></div>
+            <!--    <label for="product">Id product: </label>-->
+            <input hidden type="text" th:field="*{product}" placeholder="Id продукта" id="product">
+            <div style="color: red" th:if="${#fields.hasErrors('product')}" th:errors="*{product}"></div>
+            <!--    <label for="status">Выберите статус</label>-->
+            <!--    <select name="status" th:field="*{status}" id="status">-->
+            <!--        <div th:each="element : ${status}">-->
+            <!--            <option th:text="${element.getStatus()}" th:value="${element.getId()}"></option>-->
+            <!--        </div>-->
+            <!--    </select>-->
+            <!--    <br>-->
 
-</form>
+        </form>
+    </div>
+</section>
 </body>
 </html>
