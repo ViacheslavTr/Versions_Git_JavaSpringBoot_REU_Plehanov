@@ -3,61 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <title>Список товаров</title>
+    <link th:href="@{/css/product.css}" type="text/css" rel="stylesheet">
 </head>
 <body>
-<form th:method="POST" th:action="@{/product/search}">
-<fieldset>
-    <legend>Выберите параметры для сортировки, поиска, фильтрации</legend>
-    <br>
-    <label for="search">Поиск по наименованию</label>
-    <input type="search" name="search" th:value="*{value_search}" id="search">
-    <p>Цена, р</p>
-    <label for="from">От</label>
-    <input type="text" name="from" th:value="*{value_price_from}" id="from">
-    <label for="to">До</label>
-    <input type="text" name="to" th:value="*{value_price_to}" id="to">
-    <br>
-    <br>
-    <input type="radio" id="ascending_price" name="price" value="sorted_by_ascending_price">
-    <label for="ascending_price">Отсортировать по возрастанию цены</label>
-    <br>
-    <br>
-    <input type="radio" id="descending_price" name="price" value="sorted_by_descending_price">
-    <label for="descending_price">Отсортировать по убыванию цене</label>
-    <p>Категория товаров</p>
-    <br>
-    <input type="radio" id="furniture" name="category" value="furniture">
-    <label for="furniture">Мебель</label>
-    <br>
-    <br>
-    <input type="radio" id="appliances" name="category" value="appliances">
-    <label for="appliances">Бытовая техника</label>
-    <br>
-    <br>
-    <input type="radio" id="clothes" name="category" value="clothes">
-    <label for="clothes">Одежда</label>
-    <br>
-    <br>
-    <input type="submit" value="Найти">
-</fieldset>
-</form>
-<h3>Результат</h3>
-<div th:each="product: ${search_product}">
-    <img th:src="'/img/' + ${product.imageList[0].getFileName()}" with="300px">
-    <br>
-    <br>
-    <a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a>
-    <p th:text="'Цена: ' + ${product.getPrice()}"></p>
-</div>
-<hr>
-<hr>
-<h3>Доступные товары</h3>
-<div th:each="product: ${products}">
-    <img th:src="'/img/' + ${product.imageList[0].getFileName()}" with="300px">
-    <br>
-    <br>
-    <a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}" id="title"></a>
-    <p th:text="'Цена: ' + ${product.getPrice()}"></p>
+<div class="container">
+    <div class="nav-filter">
+        <form th:method="POST" th:action="@{/product/search}">
+            <h3 style="color: black">Выберите фильтр</h3>
+            <p>Поиск по наименованию</p>
+            <div class="nav-filter-item">
+                <input type="text" name="search" th:value="*{value_search}" id="search">
+            </div>
+            <p>Цена, р</p>
+            <div class="nav-filter-item">
+                <label for="from">От</label>
+                <input type="text" name="from" th:value="*{value_price_from}" id="from">
+            </div>
+            <div class="nav-filter-item">
+                <label for="to">До</label>
+                <input type="text" name="to" th:value="*{value_price_to}" id="to">
+            </div>
+            <div class="nav-filter-item">
+                <input type="radio" id="ascending_price" name="price" value="sorted_by_ascending_price">
+                <label for="ascending_price">Отсортировать по возрастанию цены</label>
+            </div>
+            <div class="nav-filter-item">
+                <input type="radio" id="descending_price" name="price" value="sorted_by_descending_price">
+                <label for="descending_price">Отсортировать по убыванию цене</label>
+            </div>
+            <p>Категория товаров</p>
+            <div class="nav-filter-item">
+                <input type="radio" id="furniture" name="category" value="furniture">
+                <label for="furniture">Мебель</label>
+            </div>
+            <div class="nav-filter-item">
+                <input type="radio" id="appliances" name="category" value="appliances">
+                <label for="appliances">Бытовая техника</label>
+            </div>
+            <div class="nav-filter-item">
+                <input type="radio" id="clothes" name="category" value="clothes">
+                <label for="clothes">Одежда</label>
+            </div>
+            <div class="nav-filter-item">
+                <input type="submit" value="Найти">
+            </div>
+        </form>
+    </div>
+    <div class="product">
+        <div class="nav-registration">
+            <h3>Результат поиска</h3>
+            <form class="registration" th:action="@{/admin}">
+                <input type="submit" value="Войти">
+            </form>
+        </div>
+        <div class="grid-container">
+            <div class="grid-elem" th:each="product: ${search_product}">
+                <div class="grid-elem-img">
+                    <img th:src="'/img/' + ${product.imageList[0].getFileName()}">
+                </div>
+                <div class="grid-elem-title">
+                    <a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a>
+                </div>
+                <p th:text="'Цена: ' + ${product.getPrice()}"></p>
+            </div>
+        </div>
+        <hr>
+        <hr>
+        <h3>Доступные товары</h3>
+        <div class="grid-container">
+            <div class="grid-elem" th:each="product: ${products}">
+                <div class="grid-elem-img">
+                    <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="300px">
+                </div>
+                <div class="grid-elem-title">
+                    <a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}" id="title"></a>
+                </div>
+                <p th:text="'Цена: ' + ${product.getPrice()}"></p>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
