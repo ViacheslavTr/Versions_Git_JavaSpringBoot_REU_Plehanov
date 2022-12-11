@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+    padding: 20px;
+    background-color: #292e44;
+}
+h3 {
+    font-family: 'Roboto bold', sans-serif;
+    color: white;
+    display: block;
+    text-align: left;
+}
+.container{
+    display: flex;
+    margin-bottom: 15px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+.container-img{
+    display: block;
+    border-radius: 5px;
+}
+img{
+    width: 60px;
+    border-radius: 5px;
+}
+.container-title{
+    font-size: 14px;
+    font-family: "Roboto Light", sans-serif;
+    display: block;
+    padding: 15px;
+
+}
+.container-price{
+    display: block;
+    margin-right: 20px;
+    padding-right: 15px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+}
+.order{
+    position: absolute;
+    margin: 0;
+    padding: 20px;
+    right: 0;
+    justify-content: right;
+}
+.order a{
+    padding: 10px;
+    background-color: white;
+}
+a{
+    text-underline-offset: 0.3em;
+}
