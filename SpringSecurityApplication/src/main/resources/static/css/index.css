@@ -1,0 +1,134 @@
+body{
+    margin: 0;
+    padding: 40px;
+    background-color: #292e44;
+}
+.navbar h3, h2{
+    font-family: 'Roboto bold', sans-serif;
+    color: white;
+    display: inline;
+}
+.navbar h3{
+    text-align: right;
+    display: block;
+    text-align: left;
+}
+.navbar{
+    display: flex;
+    grid-template-rows: 4fr;
+}
+.navbar h2, form{
+    display: block;
+    margin: 0 auto;
+    padding-right: 20px;
+    justify-content: center;
+}
+.navbar form input[type=submit]{
+    background-color: #959AAC;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+.navbar form input[type=submit]:hover{
+    background-color: white;
+    cursor: pointer;
+    box-shadow: #959AAC 5px 5px 5px;
+    border: none;
+}
+
+.container h3 {
+    font-family: 'Roboto bold', sans-serif;
+    color: white;
+    display: block;
+    text-align: left;
+}
+.container p{
+    font-family: 'Roboto bold', sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.container form{
+    margin: 0;
+    padding: 0;
+}
+.nav-filter-item{
+    clear: both;
+    text-align:right;
+}
+label{
+    font: 14px "Roboto Light", sans-serif;
+    margin-bottom: 5px;
+    float: left;
+}
+input[type="text"] {
+    border: 1px solid grey;
+    color: grey;
+    margin-bottom: 10px;
+    font:  14px "Roboto Light", sans-serif;
+    padding: 12px 10px 12px 40px;
+    width: 250px;
+}
+.container input[type="submit"] {
+    background: #168fff;
+    display: block;
+    margin: 0 auto;
+    justify-items: center;
+    border: 1px solid #03073f;
+    font: bold 16px Arial;
+    width: 100px;
+    height: 40px;
+}
+.container .nav-filter{
+    background-color: white;
+    display: block;
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    position: fixed;
+    border-radius: 10px;
+}
+.container .nav-filter form input[type=submit]:hover{
+    color: white;
+    background-color:#292e44;
+    cursor: pointer;
+    box-shadow: #959AAC 5px 5px 5px;
+    border: none;
+}
+.container{
+    display: flex;
+    height: 630px;
+}
+.product{
+    margin-left: 350px;
+    width: 100%;
+}
+.grid-container{
+    display: grid;
+    grid-template: repeat(auto-fit, minmax(400px, auto))/ repeat(auto-fill, minmax(330px , 330px));
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 15px;
+    padding-bottom: 20px;
+}
+.grid-elem{
+    display: block;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+    padding: 15px;
+    font-family: 'Roboto Light', sans-serif;
+    margin-bottom: 0;
+}
+.grid-elem img{
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+}
+.grid-elem-img{
+    display: block;
+    height: 400px;
+}
+.grid-elem-title{
+    display: block;
+    height: 50px;
+}

@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Информация о товаре</title>
+    <link th:href="@{/css/infoProduct.css}" type="text/css" rel="stylesheet">
 </head>
 <body>
-  <p th:text="'Наименование: ' + ${product.getTitle()}"></p>
-  <p th:text="'Описание: ' + ${product.getDescription()}"></p>
-  <p th:text="'Цена: ' + ${product.getPrice()}"></p>
-  <p th:text="'Склад: ' + ${product.getWarehouse()}"></p>
-  <p th:text="'Продавец: ' + ${product.getSeller()}"></p>
-  <p th:text="'Категория товара: ' + ${product.getCategory().getName()}"></p>
+    <div class="info">
+        <p th:text="'НАИМЕНОВАНИЕ: ' + ${product.getTitle()}"></p>
+        <p th:text="'ОПИСАНИЕ: ' + ${product.getDescription()}"></p>
+        <p th:text="'ЦЕНА: ' + ${product.getPrice()}"></p>
+        <p th:text="'СКЛАД: ' + ${product.getWarehouse()}"></p>
+        <p th:text="'ПРОДАВЕЦ: ' + ${product.getSeller()}"></p>
+        <p th:text="'КАТЕГОРИЯ ТОВАРА: ' + ${product.getCategory().getName()}"></p>
+    </div>
+    <div class="block-img">
+        <div class="grid-container">
+            <div class="grid-elem" th:each="img : ${product.getImageList()}">
+                <img class="grid-elem-img" th:src="'/img/' + ${img.getFileName()}" with="300px">
+            </div>
+        </div>
+    </div>
 
-<div th:each="img : ${product.getImageList()}">
-    <img th:src="'/img/' + ${img.getFileName()}" with="300px">
-</div>
 </body>
 </html>

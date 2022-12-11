@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    padding: 20px;
+    background-color: #292e44;
+}
+.info{
+    background-color: white;
+    display: block;
+    margin: 10px;
+    font-family: "Roboto Light", sans-serif;
+    font-size: 14px;
+    padding: 15px;
+    border-radius: 15px;
+}
+.block-img{
+    display: block;
+    margin: 10px;
+}
+.grid-container{
+    display: grid;
+    grid-template: repeat(auto-fit, minmax(400px, auto))/ repeat(auto-fill, minmax(330px , auto));
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 15px;
+    padding-bottom: 20px;
+}
+.grid-elem{
+    display: block;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+    padding: 15px;
+    font-family: 'Roboto Light', sans-serif;
+    margin-bottom: 0;
+}
+.grid-elem img{
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+}
+.grid-elem-img{
+    display: block;
+    height: 400px;
+}

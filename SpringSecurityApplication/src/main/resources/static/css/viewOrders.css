@@ -11,7 +11,7 @@ h3 {
 }
 .navbar{
     display: grid;
-    width: 590px;
+    width: 600px;
     grid-template-columns: 1fr 1fr;
 
 }
@@ -68,7 +68,6 @@ h3 {
 }
 a{
     text-underline-offset: 0.3em;
-
 }
 p{
     display: inline;
