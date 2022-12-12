@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+    padding: 20px;
+    background-color: #292e44;
+}
+h3 {
+    font-family: 'Roboto bold', sans-serif;
+    color: black;
+    display: block;
+    text-align: center;
+}
+.content {
+    background-color: white;
+    width: 800px;
+    border: 1px solid grey;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    height: 780px;
+}
+.content-item{
+    clear:both;
+    text-align:right;
+    padding: 10px;
+}
+select, textarea, input{
+    border: 1px solid grey;
+    color: grey;
+    font:  14px "Roboto Light", sans-serif;
+    padding: 10px 10px 10px 10px;
+}
+label{
+    float:left;
+    font: 14px "Roboto Light", sans-serif;
+}
+.content form input[type="submit"] {
+    background: #168fff;
+    border: 1px solid #03073f;
+    font: bold 16px Arial;
+    width: 300px;
+    height: 40px;
+    margin-top: 10px;
+    color: black;
+}
+.content form input[type="submit"]:hover {
+    background: #14205d;
+    border: 2px solid #03073f;
+    color: white;
+    cursor: pointer;
+}
+#description{
+    height: 250px;
+    width: 758px;
+    resize: none;
+}
+textarea{
+    width: 758px;
+    resize: none;
+}
+#title{
+    width: 450px;
+}
+#price, #warehouse{
+    width: 155px;
+}
